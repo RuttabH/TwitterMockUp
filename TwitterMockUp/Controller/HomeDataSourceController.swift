@@ -13,6 +13,8 @@ class HomeDataSourceController: DatasourceController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
+        
+        // Checking commits
     
         let homeDatasource = HomeDatasource()
         self.datasource = homeDatasource
