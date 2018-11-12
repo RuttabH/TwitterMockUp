@@ -6,10 +6,21 @@
 //  Copyright © 2018 taimoor.com. All rights reserved.
 //
 
+
 import UIKit
 import LBTAComponents
 
 class HomeDatasource: Datasource {
+    
+    let users: [User] = {
+       
+        let brianUser = User(name: "Brian Voong", username: "@btothebrianVoong", bioText: "iPhone, iPad, iOS Programming Community. Joing us to learn swift, objective C and build iOS apps!", profileImage: UIImage(named: "profile_image")!)
+        
+        let rayUser = User(name: "Ray Wenderlich", username: "@raywenderlich", bioText: "Raywenderlich is an iPhone developer and also tweet about topic related to iphone, gaming and technology. Checkout our conferences.", profileImage: UIImage(named: "profile_image")!)
+        
+        
+        return [brianUser,rayUser]
+    }()
     
     let words = ["user1","user2","user3"]
     
@@ -22,11 +33,11 @@ class HomeDatasource: Datasource {
     }
     
     override func numberOfItems(_ section: Int) -> Int {
-        return words.count
+        return users.count
     }
     
     override func item(_ indexPath: IndexPath) -> Any? {
-        return words[indexPath.item]
+        return users[indexPath.item]
     }
     
     override func cellClasses() -> [DatasourceCell.Type] {

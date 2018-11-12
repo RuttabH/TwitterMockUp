@@ -13,8 +13,10 @@
 		3814F14E21940BE000BED45B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3814F14C21940BE000BED45B /* LaunchScreen.storyboard */; };
 		3814F15921940BE000BED45B /* TwitterMockUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814F15821940BE000BED45B /* TwitterMockUpTests.swift */; };
 		3814F16421940BE000BED45B /* TwitterMockUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814F16321940BE000BED45B /* TwitterMockUpUITests.swift */; };
+		381539FB21999D8A00677F7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381539FA21999D8A00677F7A /* User.swift */; };
+		381539FD2199A90300677F7A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381539FC2199A90300677F7A /* UserCell.swift */; };
 		38BCFC7D219427BD0001AFA6 /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCFC7C219427BD0001AFA6 /* HomeDataSourceController.swift */; };
-		38BCFC8221943F7A0001AFA6 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCFC8121943F7A0001AFA6 /* Cells.swift */; };
+		38BCFC8221943F7A0001AFA6 /* UserHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCFC8121943F7A0001AFA6 /* UserHeaderFooter.swift */; };
 		38BCFC8421943FDF0001AFA6 /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCFC8321943FDF0001AFA6 /* HomeDatasource.swift */; };
 		6D3A48E56A68CC54D31A351F /* Pods_TwitterMockUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2757AF9AE21EA7E7E5970E /* Pods_TwitterMockUp.framework */; };
 /* End PBXBuildFile section */
@@ -50,8 +52,10 @@
 		3814F15F21940BE000BED45B /* TwitterMockUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterMockUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3814F16321940BE000BED45B /* TwitterMockUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterMockUpUITests.swift; sourceTree = "<group>"; };
 		3814F16521940BE000BED45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		381539FA21999D8A00677F7A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		381539FC2199A90300677F7A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		38BCFC7C219427BD0001AFA6 /* HomeDataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
-		38BCFC8121943F7A0001AFA6 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		38BCFC8121943F7A0001AFA6 /* UserHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderFooter.swift; sourceTree = "<group>"; };
 		38BCFC8321943FDF0001AFA6 /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		9C2757AF9AE21EA7E7E5970E /* Pods_TwitterMockUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterMockUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06AA17E3E01BD6DC8BF7E4C /* Pods-TwitterMockUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterMockUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterMockUp/Pods-TwitterMockUp.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +161,8 @@
 		38BCFC7F21943F540001AFA6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				38BCFC8121943F7A0001AFA6 /* Cells.swift */,
+				38BCFC8121943F7A0001AFA6 /* UserHeaderFooter.swift */,
+				381539FC2199A90300677F7A /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				38BCFC8321943FDF0001AFA6 /* HomeDatasource.swift */,
+				381539FA21999D8A00677F7A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,9 +361,11 @@
 			files = (
 				38BCFC7D219427BD0001AFA6 /* HomeDataSourceController.swift in Sources */,
 				3814F14921940BDB00BED45B /* TwitterMockUp.xcdatamodeld in Sources */,
+				381539FB21999D8A00677F7A /* User.swift in Sources */,
 				38BCFC8421943FDF0001AFA6 /* HomeDatasource.swift in Sources */,
 				3814F14121940BDB00BED45B /* AppDelegate.swift in Sources */,
-				38BCFC8221943F7A0001AFA6 /* Cells.swift in Sources */,
+				38BCFC8221943F7A0001AFA6 /* UserHeaderFooter.swift in Sources */,
+				381539FD2199A90300677F7A /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
