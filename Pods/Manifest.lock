@@ -5,7 +5,7 @@ DEPENDENCIES:
   - LBTAComponents
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - LBTAComponents
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5fd2c2d63589427eb8a21675d1b577a845705d97
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0
