@@ -19,6 +19,7 @@
 		38BCFC8221943F7A0001AFA6 /* UserHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCFC8121943F7A0001AFA6 /* UserHeaderFooter.swift */; };
 		38BCFC8421943FDF0001AFA6 /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCFC8321943FDF0001AFA6 /* HomeDatasource.swift */; };
 		6D3A48E56A68CC54D31A351F /* Pods_TwitterMockUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2757AF9AE21EA7E7E5970E /* Pods_TwitterMockUp.framework */; };
+		CEFA7941219AEE6D00516148 /* HomeDatasourceController+NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA7940219AEE6D00516148 /* HomeDatasourceController+NavBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		38BCFC8321943FDF0001AFA6 /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		9C2757AF9AE21EA7E7E5970E /* Pods_TwitterMockUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterMockUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06AA17E3E01BD6DC8BF7E4C /* Pods-TwitterMockUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterMockUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterMockUp/Pods-TwitterMockUp.release.xcconfig"; sourceTree = "<group>"; };
+		CEFA7940219AEE6D00516148 /* HomeDatasourceController+NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDatasourceController+NavBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				38BCFC7C219427BD0001AFA6 /* HomeDataSourceController.swift */,
+				CEFA7940219AEE6D00516148 /* HomeDatasourceController+NavBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				381539FB21999D8A00677F7A /* User.swift in Sources */,
 				38BCFC8421943FDF0001AFA6 /* HomeDatasource.swift in Sources */,
 				3814F14121940BDB00BED45B /* AppDelegate.swift in Sources */,
+				CEFA7941219AEE6D00516148 /* HomeDatasourceController+NavBar.swift in Sources */,
 				38BCFC8221943F7A0001AFA6 /* UserHeaderFooter.swift in Sources */,
 				381539FD2199A90300677F7A /* UserCell.swift in Sources */,
 			);

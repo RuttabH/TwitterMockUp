@@ -20,6 +20,11 @@ class UserCell: DatasourceCell {
             nameLabel.text = user.name
             usernameLabel.text = user.username
             bioTextView.text = user.bioText
+            
+            
+            let image = UIImage()
+            
+            profileImageView.image = user.profileImage
         }
     }
     
@@ -66,7 +71,7 @@ class UserCell: DatasourceCell {
         button.setTitle("Follow", for: .normal)
         button.setTitleColor(twitterBlue, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setImage(#imageLiteral(resourceName: "twitter_follow"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "follow"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0) //to change insets of button image
         //button.titleEdgeInsets = UIEdgeInsets // to change button title inset
