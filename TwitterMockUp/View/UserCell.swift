@@ -97,6 +97,8 @@ class UserCell: DatasourceCell {
         addSubview(bioTextView)
         addSubview(followButton)
         
+        backgroundColor = .white
+        
         super.separatorLineView.isHidden = false
         super.separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
         

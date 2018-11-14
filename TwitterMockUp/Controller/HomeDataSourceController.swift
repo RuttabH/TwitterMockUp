@@ -19,6 +19,8 @@ class HomeDataSourceController: DatasourceController {
         // Checking commits
         //testing
         
+        self.collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
+        
          setUpNavigationBarItems()
         
         let homeDatasource = HomeDatasource()
@@ -36,16 +38,30 @@ class HomeDataSourceController: DatasourceController {
     
     
     //MARK: COLLECTIONVIEW FUNC
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
+        UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        if section == 1 {
+            return .zero
+        }
         return CGSize(width: view.frame.size.width, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 50)
+        
+        if section == 1 {
+            return .zero
+        }
+        return CGSize(width: view.frame.size.width, height: 64)
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

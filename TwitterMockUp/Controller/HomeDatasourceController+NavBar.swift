@@ -39,10 +39,18 @@ extension HomeDataSourceController {
         
         navigationItem.titleView = titleImageView
         
-        
-        
-        
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
+        
+        //This line of code is used to remove the thick navigation bar bottom line(the line is a shadow)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        //This line of code is uswed to create a custom navigation bar bottom line
+        let navBarSeparatorView = UIView()
+        navBarSeparatorView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
+        view.addSubview(navBarSeparatorView)
+        navBarSeparatorView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
+        
     }
 }
