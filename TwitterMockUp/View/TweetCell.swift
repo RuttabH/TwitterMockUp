@@ -53,6 +53,18 @@ class TweetCell: DatasourceCell {
         return imageView
     }()
     
+    let replyButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "reply"), for: .normal)
+        return button
+    }()
+    
+    let retweetButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "retweet"), for: .normal)
+        return button
+    }()
+    
     
     override func setupViews() {
         super.setupViews()
@@ -63,9 +75,45 @@ class TweetCell: DatasourceCell {
         
         addSubview(profileImageView)
         addSubview(messageTextView)
+        addSubview(replyButton)
         
         profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
         
         messageTextView.anchor(topAnchor, left: profileImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 4, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        replyButton.anchor(nil, left: messageTextView.leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        
+        setUpBottomButtons()
     }
+
+    fileprivate func setUpBottomButtons()  {
+        let replyButtonContainerView = UIView()
+        replyButtonContainerView.backgroundColor = .red
+       
+        let retweetButtonContainerView = UIView()
+        retweetButtonContainerView.backgroundColor = .blue
+        
+        let likeButtonContainerView = UIView()
+        likeButtonContainerView.backgroundColor = .green
+        
+        let directMessageButtonContainerView = UIView()
+        directMessageButtonContainerView.backgroundColor = .purple
+        
+        let buttonStackView = UIStackView(arrangedSubviews: [replyButtonContainerView,retweetButtonContainerView,likeButtonContainerView,directMessageButtonContainerView])
+        buttonStackView.axis = .horizontal
+        buttonStackView.distribution = .fillEqually
+        
+        addSubview(buttonStackView)
+        buttonStackView.anchor(nil, left: messageTextView.leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        
+        addSubview(replyButton)
+        addSubview(replyButton)
+        
+        replyButton.anchor(replyButtonContainerView.topAnchor, left: replyButtonContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        
+        replyButton.anchor(replyButtonContainerView.topAnchor, left: replyButtonContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        
+    }
+    
+
 }
