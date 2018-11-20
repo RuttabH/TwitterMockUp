@@ -39,6 +39,7 @@ class TweetCell: DatasourceCell {
     var messageTextView: UITextView = {
        let tv = UITextView()
         tv.text = "SOME SAMPLE TEXT"
+        tv.backgroundColor = .clear
        // tv.backgroundColor = .yellow
         return tv
     }()
@@ -55,13 +56,25 @@ class TweetCell: DatasourceCell {
     
     let replyButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "reply"), for: .normal)
+        button.setImage(UIImage(named: "reply")?.withRenderingMode(.alwaysOriginal), for: .normal)
         return button
     }()
     
     let retweetButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "retweet"), for: .normal)
+        button.setImage(UIImage(named: "retweet")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        return button
+    }()
+    
+    let likeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "like")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        return button
+    }()
+    
+    let directMessageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "mail")?.withRenderingMode(.alwaysOriginal), for: .normal)
         return button
     }()
     
@@ -88,29 +101,35 @@ class TweetCell: DatasourceCell {
 
     fileprivate func setUpBottomButtons()  {
         let replyButtonContainerView = UIView()
-        replyButtonContainerView.backgroundColor = .red
+        //replyButtonContainerView.backgroundColor = .red
        
         let retweetButtonContainerView = UIView()
-        retweetButtonContainerView.backgroundColor = .blue
+       // retweetButtonContainerView.backgroundColor = .blue
         
         let likeButtonContainerView = UIView()
-        likeButtonContainerView.backgroundColor = .green
+        //likeButtonContainerView.backgroundColor = .green
         
         let directMessageButtonContainerView = UIView()
-        directMessageButtonContainerView.backgroundColor = .purple
+        //directMessageButtonContainerView.backgroundColor = .purple
         
         let buttonStackView = UIStackView(arrangedSubviews: [replyButtonContainerView,retweetButtonContainerView,likeButtonContainerView,directMessageButtonContainerView])
         buttonStackView.axis = .horizontal
         buttonStackView.distribution = .fillEqually
         
         addSubview(buttonStackView)
-        buttonStackView.anchor(nil, left: messageTextView.leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        buttonStackView.anchor(nil, left: messageTextView.leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         
         addSubview(replyButton)
         addSubview(retweetButton)
+        addSubview(likeButton)
+        addSubview(directMessageButton)
         
         replyButton.anchor(replyButtonContainerView.topAnchor, left: replyButtonContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
         retweetButton.anchor(retweetButtonContainerView.topAnchor, left: retweetButtonContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        
+        likeButton.anchor( likeButtonContainerView.topAnchor, left:  likeButtonContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        
+        directMessageButton.anchor(directMessageButtonContainerView.topAnchor, left: directMessageButtonContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
         
     }
     
