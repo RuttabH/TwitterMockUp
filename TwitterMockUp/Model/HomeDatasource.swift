@@ -9,19 +9,35 @@
 
 import UIKit
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
-class HomeDatasource: Datasource {
+class HomeDatasource: Datasource, JSONDecodable {
     
-    let users: [User] = {
+    var users = [User]()
+    
+    required init(json: JSON) throws {
        
-        let brianUser = User(name: "Brian Voong", username: "@btothebrianVoong", bioText: "iPhone, iPad, iOS Programming Community. Joing us to learn swift, objective C and build iOS apps!", profileImage: #imageLiteral(resourceName: "profile_image"))
+        //print("Now ready to parse jason: \n", json)
         
-        let rayUser = User(name: "Ray Wenderlich", username: "@raywenderlich", bioText: "Raywenderlich is an iPhone developer and also tweet about topic related to iphone, gaming and technology. Checkout our conferences.", profileImage: #imageLiteral(resourceName: "ray_profile_image"))
+        var users = [User]()
         
-         let algorithmCourseUser = User(name: "Algorithm Course", username: "learnitquick", bioText: "This recent released course on https://video.letsbuildthatapp.com/basic-training provides some excellent guidance on how to use UITableView and UICollectionView. This course also teaches some basic on the Swift language, for exampleif statements and For Loops. This will be an excellent purchase for you ", profileImage: #imageLiteral(resourceName: "profile_image"))
+        let array = json["users"].array
+        for userJson in array! {
+            let name = userJson["name"].stringValue
+            let username = userJson["username"].stringValue
+            let bio = userJson["bio"].stringValue
+            
+            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+            // print(user.username)
+            users.append(user)
+        }
         
-        return [brianUser,rayUser,algorithmCourseUser]
-    }()
+        self.users = users
+    }
+    
+    
+
     
     let words = ["user1","user2","user3"]
     

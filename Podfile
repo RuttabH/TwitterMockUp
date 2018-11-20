@@ -7,4 +7,5 @@ target 'TwitterMockUp' do
 
   # Pods for TwitterMockUp
 	pod "LBTAComponents"
+	pod "TRON"
 end
