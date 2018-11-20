@@ -39,6 +39,11 @@ class HomeDataSourceController: DatasourceController {
     
     //MARK: COLLECTIONVIEW FUNC
     
+    // This function handles screen rotation( its expand the copllectionview according to the screen)
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionViewLayout.invalidateLayout() //This functions relayout the collectionview(change width height position based on screen size
+    }
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
