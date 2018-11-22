@@ -17,23 +17,16 @@ class HomeDatasource: Datasource, JSONDecodable {
     var users = [User]()
     
     required init(json: JSON) throws {
-       
-        //print("Now ready to parse jason: \n", json)
+
+        let userJsonArray = json["users"].array
         
-        var users = [User]()
+        //map functions iterate through each elements of the userJsonArray,
+        //Using the current iteration value to create a new User object and then return it
+        //the returned object is added to the self.users array
+        self.users = userJsonArray!.map{ User(json: $0)}
         
-        let array = json["users"].array
-        for userJson in array! {
-            let name = userJson["name"].stringValue
-            let username = userJson["username"].stringValue
-            let bio = userJson["bio"].stringValue
-            
-            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
-            // print(user.username)
-            users.append(user)
-        }
-        
-        self.users = users
+        let tweetsJsonArray = json["tweets"].array
+        self.tweets = tweetsJsonArray!.map{Tweet(json: $0)}
     }
     
     
@@ -41,16 +34,8 @@ class HomeDatasource: Datasource, JSONDecodable {
     
     let words = ["user1","user2","user3"]
     
-    let tweets: [Tweet] = {
-        
-        let brianUser = User(name: "Brian Voong", username: "@btothebrianVoong", bioText: "iPhone, iPad, iOS Programming Community. Joing us to learn swift, objective C and build iOS apps!", profileImage: #imageLiteral(resourceName: "profile_image"))
-        
-        let tweet = Tweet(user: brianUser, message: "Welkcome to episode 9 of the Twitter series, really hope your enoying the series so far. I really really ned a long text blcok to render out so we're going to stop here!")
-        
-        let tweet2 = Tweet(user: brianUser, message: "This is the second tweet for our sample project. very very exciting message..")
-        
-        return[tweet,tweet2]
-    }()
+    let tweets: [Tweet]
+    
     
     override func headerClasses() -> [DatasourceCell.Type]? {
         return [UserHeader.self]

@@ -32,9 +32,7 @@ struct Service {
             print(homeDataSouce.users.count)
             
             completion(homeDataSouce)
-            
-           // self.datasource = homeDataSouce
-            
+
         }) { (err) in
             print("Failed to fetch json..", err)
         }

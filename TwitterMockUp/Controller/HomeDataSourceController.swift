@@ -23,11 +23,8 @@ class HomeDataSourceController: DatasourceController {
         
         self.collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
         
-         setUpNavigationBarItems()
-        
-//        let homeDatasource = HomeDatasource()
-//        self.datasource = homeDatasource
-   
+        setUpNavigationBarItems()
+
         Service.sharedInstance.fetchHomeFeed { (homeDataSource) in
             self.datasource = homeDataSource
         }
