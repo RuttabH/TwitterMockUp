@@ -28,7 +28,11 @@ class HomeDataSourceController: DatasourceController {
 //        let homeDatasource = HomeDatasource()
 //        self.datasource = homeDatasource
    
-        fetchHomeFeed()
+        Service.sharedInstance.fetchHomeFeed { (homeDataSource) in
+            self.datasource = homeDataSource
+        }
+        
+        //fetchHomeFeed()
     }
     
     
@@ -39,54 +43,6 @@ class HomeDataSourceController: DatasourceController {
         setupLeftNavItems()
     }
     
-    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
-    
-    class Home: JSONDecodable {
-        
-        var users = [User]()
-        
-        required init(json: JSON) throws {
-            //print("Now ready to parse jason: \n", json)
-            
-            var users = [User]()
-            
-            let array = json["users"].array
-            for userJson in array! {
-                let name = userJson["name"].stringValue
-                let username = userJson["username"].stringValue
-                let bio = userJson["bio"].stringValue
-                
-                let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
-               // print(user.username)
-                users.append(user)
-            }
-            
-            self.users = users
-        }
-    }
-    
-    class JSONError: JSONDecodable {
-        required init(json: JSON) throws {
-            print("JSON ERROR")
-        }
-    }
-    
-    fileprivate func fetchHomeFeed() {
-       //start our json fetch
-        
-        let request: APIRequest<HomeDatasource, JSONError> = tron.swiftyJSON.request("/twitter/home")
-        
-        request.perform(withSuccess: { (homeDataSouce) in
-            print("Sucessfully fetched our json objects")
-            print(homeDataSouce.users.count)
-            
-            self.datasource = homeDataSouce
-            
-        }) { (err) in
-            print("Failed to fetch json..", err)
-        }
-        
-    }
     
     //MARK: COLLECTIONVIEW FUNC
     
